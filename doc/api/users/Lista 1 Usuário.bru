@@ -1,0 +1,27 @@
+meta {
+  name: Lista 1 Usuário
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}users/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nome": "Eduardo",
+    "login": "1",
+    "senha": "1"
+  }
+}

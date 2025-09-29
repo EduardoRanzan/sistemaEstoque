@@ -1,0 +1,27 @@
+meta {
+  name: Excluí Usuário
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{host}}users/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nome": "asdasdasd",
+    "login": "1",
+    "senha": "1"
+  }
+}

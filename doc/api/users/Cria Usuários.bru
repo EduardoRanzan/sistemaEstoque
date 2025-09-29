@@ -1,0 +1,23 @@
+meta {
+  name: Cria Usuários
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nome": "",
+    "email": "",
+    "senha": ""
+  }
+}
