@@ -15,7 +15,7 @@ export default function Login() {
     setErro("");
 
     try {
-      const resp = await fetch("http://localhost:5050/auth", {
+      const resp = await fetch(`${import.meta.env.VITE_API_BACK}auth`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
@@ -26,7 +26,7 @@ export default function Login() {
       }
 
       const data = await resp.json();
-      localStorage.setItem("token", data.token); // guarda o token
+      localStorage.setItem("token", data.token);
       localStorage.setItem("nome", data.user.nome)
       
       navigate("/dashboard")

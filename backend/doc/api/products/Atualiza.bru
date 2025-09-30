@@ -1,0 +1,27 @@
+meta {
+  name: Atualiza
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{host}}users/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nome": "",
+    "email": "",
+    "senha": ""
+  }
+}

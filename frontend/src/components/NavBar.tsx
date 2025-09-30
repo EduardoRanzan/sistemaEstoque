@@ -1,4 +1,4 @@
-import { ArchiveBoxIcon } from "@heroicons/react/24/solid";
+import { ArchiveBoxIcon, ArrowLeftStartOnRectangleIcon, DocumentChartBarIcon, UsersIcon, PercentBadgeIcon } from "@heroicons/react/24/solid";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
@@ -12,27 +12,27 @@ export default function Navbar() {
 
   return (
     <nav className="w-full flex justify-between items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-400 text-white shadow-md">
-      {/* Logo */}
       <div className="flex items-center gap-2">
         <ArchiveBoxIcon className="w-8 h-8 text-white" />
-        <span className="text-xl font-bold">Sistema de Estoque</span>
+        <span className="text-xl font-bold">Estoque</span>
       </div>
 
-      {/* Links */}
-      <div className="flex items-center gap-6 text-lg">
-        <Link to="/dashboard" className="hover:text-gray-200 transition-colors">
-          Dashboard
+      <div className="flex-1 flex justify-center gap-6 text-lg font-bold">
+        <Link to="/dashboard" className="hover:text-cyan-200 transition-colors flex items-center">
+          <DocumentChartBarIcon className="size-7"/> Dashboard
         </Link>
-        <Link to="/users" className="hover:text-gray-200 transition-colors">
-          Usuários
+        <Link to="/users" className="hover:text-cyan-200 transition-colors flex items-center">
+          <UsersIcon className="size-7"/> Usuários
         </Link>
-        <button
-          onClick={handleLogout}
-          className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded transition-colors"
-        >
-          Logout
-        </button>
+        <Link to="/products" className="hover:text-cyan-200 transition-colors flex items-center">
+          <PercentBadgeIcon className="size-7"/> Produtos
+        </Link>
       </div>
+
+      <button onClick={handleLogout}>
+        <ArrowLeftStartOnRectangleIcon className="size-9 text-red-600" />
+      </button>
     </nav>
+
   );
 }
