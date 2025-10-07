@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/NavBar";
-import Table from "../../components/Table";
 import { useParams } from "react-router-dom";
-import Unit from "../../components/Unit";
 import Layout from "../../components/Layout";
 
 type User = {

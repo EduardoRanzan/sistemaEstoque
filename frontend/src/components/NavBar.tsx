@@ -19,7 +19,7 @@ export default function Navbar() {
 
       <div className="flex-1 flex justify-center gap-6 text-lg font-bold">
         <Link to="/dashboard" className="hover:text-cyan-200 transition-colors flex items-center">
-          <DocumentChartBarIcon className="size-7"/> Dashboard
+          <DocumentChartBarIcon className="size-7"/> Dashboard's
         </Link>
         <Link to="/users" className="hover:text-cyan-200 transition-colors flex items-center">
           <UsersIcon className="size-7"/> Usuários

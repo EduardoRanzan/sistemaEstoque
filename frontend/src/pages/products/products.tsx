@@ -57,7 +57,7 @@ export default function Product() {
     <div>
       <Navbar />
       <div className="p-6">
-        <h1 className="mb-4 text-2xl font-bold">Produtos</h1>
+        <h1 className="mb-4 text-2xl font-bold">Proasddutos</h1>
         {erro && <div className="mb-4 rounded bg-red-100 p-2 text-red-700">{erro}</div>}
         {loading ? <p>Carregando...</p> : <Table columns={columns} data={products} />}
       </div>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/NavBar";
 import Table from "../../components/Table";
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 type User = {
   id: string;
@@ -52,7 +54,10 @@ export default function ListUser() {
     <div>
       <Navbar />
       <div className="p-6">
-        <h1 className="mb-4 text-2xl font-bold">Usuários</h1>
+        <div className="flex">
+          <h2 className="mb-4 text-2xl font-bold mr-2">Usuários</h2> 
+          <Link to="./new"><PlusCircleIcon className="w-10 h-10 text-black"></PlusCircleIcon></Link>
+        </div>
         {erro && <div className="mb-4 rounded bg-red-100 p-2 text-red-700">{erro}</div>}
         {loading ? <p>Carregando...</p> : <Table columns={columns} data={users} />}
       </div>

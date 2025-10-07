@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/NavBar";
 import Table from "../../components/Table";
+import { Link } from "react-router-dom";
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
 
 type Product = {
   id: string;
@@ -57,7 +59,10 @@ export default function ListProducts() {
     <div>
       <Navbar />
       <div className="p-6">
-        <h1 className="mb-4 text-2xl font-bold">Produtos</h1>
+        <div className="flex">
+          <h1 className="mb-4 text-2xl font-bold mr-2">Usuários</h1> 
+          <Link to="./new"><PlusCircleIcon className="w-10 h-10 text-black"></PlusCircleIcon></Link>
+        </div>
         {erro && <div className="mb-4 rounded bg-red-100 p-2 text-red-700">{erro}</div>}
         {loading ? <p>Carregando...</p> : <Table columns={columns} data={products} />}
       </div>
